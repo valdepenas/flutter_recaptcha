@@ -10,6 +10,7 @@ class RecaptchaV2 extends StatefulWidget {
   final RecaptchaV2Controller controller;
   final bool addCancelButton;
   final String cancelButtonLabel;
+  final Color buttonColor;
 
   final ValueChanged<String> response;
 
@@ -20,6 +21,7 @@ class RecaptchaV2 extends StatefulWidget {
     this.response,
     this.addCancelButton = true,
     this.cancelButtonLabel = "CANCEL RECAPTCHA",
+    this.buttonColor = Colors.grey,
   })  : controller = controller ?? RecaptchaV2Controller(),
         assert(apiKey != null, "Google ReCaptcha API KEY is missing.");
 
@@ -103,6 +105,7 @@ class _RecaptchaV2State extends State<RecaptchaV2> {
                 children: <Widget>[
                   Expanded(
                     child: RaisedButton(
+                      color: widget.buttonColor,
                       child: Text(widget.cancelButtonLabel),
                       onPressed: () {
                         controller.hide();
