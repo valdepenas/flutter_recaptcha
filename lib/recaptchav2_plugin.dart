@@ -14,8 +14,8 @@ class RecaptchaV2 extends StatefulWidget {
   final ValueChanged<String> response;
 
   RecaptchaV2({
-    this.apiKey,
-    this.pluginURL = "https://software-incubator.github.io/flutter_recaptcha/",
+    @required this.apiKey,
+    @required this.pluginURL,
     RecaptchaV2Controller controller,
     this.response,
     this.addCancelButton = true,

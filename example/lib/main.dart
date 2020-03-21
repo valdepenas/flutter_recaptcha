@@ -39,22 +39,23 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Stack(
         children: <Widget>[
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  child: Text("SHOW ReCAPTCHA"),
-                  onPressed: () {
-                    recaptchaV2Controller.show();
-                  },
-                ),
-                Text(verifyResult),
-              ],
-            ),
-          ),
+          // Center(
+          //   child: Column(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: <Widget>[
+          //       RaisedButton(
+          //         child: Text("SHOW ReCAPTCHA"),
+          //         onPressed: () {
+          //           recaptchaV2Controller.show();
+          //         },
+          //       ),
+          //       Text(verifyResult),
+          //     ],
+          //   ),
+          // ),
           RecaptchaV2(
             apiKey: "6Lc_erMUAAAAAFnlJh8hYO7Uj9CZW95vTcdzKALA",
+            pluginURL: "https://software-incubator.github.io/flutter_recaptcha/",
             controller: recaptchaV2Controller,
             response: (token){
               setState(() {
