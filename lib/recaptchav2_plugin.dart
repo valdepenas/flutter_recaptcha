@@ -96,7 +96,7 @@ class _RecaptchaV2State extends State<RecaptchaV2> {
             webViewController = _controller;
           },
         ),
-        if (widget.addCancelButton)
+        (widget.addCancelButton) ?
           Align(
             alignment: Alignment.bottomCenter,
             child: SizedBox(
@@ -117,7 +117,7 @@ class _RecaptchaV2State extends State<RecaptchaV2> {
                 ],
               ),
             ),
-          ),
+          ) : Container(),
       ],
     )
         : Container();
